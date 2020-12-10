@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script defer src="./scripts/validator.js"></script>
+    <script defer src="./scripts/main.js"></script>
+</head>
+<body>
+
+    <main class="main-content">
+        <header class="header">Student management system</header>
+        <br/>   
+        <ul class="student-list">
+        </ul>
+
+        <div class="form-wrapper">
+            <form action="" method="POST" id="student-form" class="student-form">
+                <header class="student-form__header">New student information</header>
+                <p>
+                    <label for="id">Id</label>
+                    <input type="text" name="id" id="id">
+                    <span class="student-form__error"></span>
+                </p>
+                <p>
+                    <label for="full-name">Full name</label>
+                    <input type="text" name="full-name" id="full-name">
+                    <span class="student-form__error"></span>
+                </p>
+                <p>
+                    <label for="age">Age</label>
+                    <input type="text" name="age" id="age">
+                    <span class="student-form__error"></span>
+                </p>
+                <p>
+                    <label for="gender">Gender</label>
+                    <input type="text" name="gender" id="gender">
+                    <span class="student-form__error"></span>
+                </p>
+                <p>
+                    <label for="current-address">Current address</label>
+                    <input type="text" name="current-address" id="current-address">
+                    <span class="student-form__error"></span>
+                </p>
+                <p>
+                    <label for="faculty">Faculty</label>
+                    <input type="text" name="faculty" id="faculty">
+                    <span class="student-form__error"></span>
+                </p>
+                <button type="submit" class="btn student-form__btn">Send</button>
+            </form>
+            
+            <form action="" method="" class="delete-form" id="delete-form">
+                <header class="delete-form__header">Xóa sinh viên theo ID</header>
+                <p>
+                    <label for="id">Id muốn xóa</label>
+                    <input type="text" name="delete-id" id="delete-id">
+                    <span class="student-form__error"></span>
+                </p>
+                <button class="btn delete-btn">Xóa</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

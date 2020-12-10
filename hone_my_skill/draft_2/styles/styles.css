@@ -1,0 +1,102 @@
+html {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+input, button, select, textarea {
+    box-sizing: border-box;
+    margin: 0;
+}
+p, h2, h1, h3, h4 {
+	margin: 0;
+}
+ul, li {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+/* -------------------------------------------------------------- */
+.error > span {
+    color: red;
+    display: block;
+    margin-left: 114px;
+    margin-top: 6px;
+}
+.student-form > p.error > input {
+    border-color: red;
+}
+body {
+    background-color: #eee;
+}
+.main-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.header {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+.student-list {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.student-list > li {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.student-list > li > span {
+    display: block;
+}
+.student-list > li > button.delete-btn,
+.student-list > li > button.update-btn {
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
+.student-list > li > button.update-btn {
+    top: 40px;
+}
+
+.student-form,
+.delete-form {
+    position: fixed;
+    top: 60px;
+    right: 300px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 20px;
+}
+.delete-form {
+    top: 500px;
+}
+.student-form > header,
+.delete-form > header {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.student-form > p,
+.delete-form > p {
+    margin: 0 0 4px 0;
+}
+.student-form > p > label,
+.delete-form > p > label {
+    display: inline-block;
+    min-width: 110px;
+}
+.student-form > p > input,
+.delete-form > p > input {
+    padding: 4px 12px;
+    border-radius: 3px;
+    border: 1px solid;
+    max-width: 160px;
+}
+.student-form__btn,
+.delete-btn {
+    padding: 4px 10px;
+    margin-left: 114px;
+}
