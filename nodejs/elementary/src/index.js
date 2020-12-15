@@ -1,31 +1,41 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
 // include path
-const path = require('path')
+const path = require('path');
 
 // include static
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/public')));
 
 // include morgan
-var morgan = require('morgan')
-app.use(morgan('combined'))
+const morgan = require('morgan');
+app.use(morgan('combined'));
+
+// use middlewares
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 //include template engine (handlebars)
-var exphbs  = require('express-handlebars');
-app.engine('hbs', exphbs({
-  "extname": ".hbs"
-}));
+var exphbs = require('express-handlebars');
+app.engine(
+    'hbs',
+    exphbs({
+        extname: '.hbs',
+    }),
+);
 app.set('view engine', 'hbs');
 
-// set custom path for handblebars 
+// set custom path for handblebars
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.get('/', (req, res) => {
-  console.log(res);
-  res.render('home')
-})
+// include routes directory (/routes/index.js)
+const route = require('./routes/index.js');
 
+// All route run here
+route(app);
+
+// Run server - the last step
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+    console.log(`Example app listening at http://localhost:${port}`);
+});

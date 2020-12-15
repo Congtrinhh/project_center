@@ -8,6 +8,14 @@
     "start": "nodemon src/index.js",
     "watch": "node-sass --watch src/resources/scss/ -o src/public/css/"
   },
+  "lint-staged": {
+    "src/**/*.{js,json,html,scss}": "prettier --single-quote --trailing-comma all --write --tab-width 4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "author": "congtrinhh",
   "license": "ISC",
   "dependencies": {
@@ -15,8 +23,11 @@
     "express-handlebars": "^5.2.0"
   },
   "devDependencies": {
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
     "morgan": "^1.10.0",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
   }
 }
