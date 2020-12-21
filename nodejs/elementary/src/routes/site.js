@@ -4,6 +4,6 @@ const router = express.Router();
 // include SiteController
 const siteController = require('../app/controllers/SiteController');
 
-router.use('/', siteController.index);
+router.get('/', siteController.index);
 
 module.exports = router;
