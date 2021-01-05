@@ -9,6 +9,18 @@ body {
     }
 }
 
+.header {
+    #navbarSupportedContent {
+        ul {
+            margin-left: auto !important;
+            margin-right: 20% !important;
+            li {
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
 .footer {
     position: relative;
     background-color: #051120;
@@ -52,7 +64,7 @@ body {
             justify-content: center;
             margin: 0 0 100px 0;
             .footer__wrapper__terms__item {
-                margin: 0 6px;
+                margin: 4px 6px;
                 font-size: 0.9rem;
                 .footer__wrapper__terms__item__link {
                     color: $white-color;
