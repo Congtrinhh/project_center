@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nice xư blog</title>
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/3159/3159075.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="./assets/icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
@@ -12,15 +13,15 @@
         <div class="header">
             <ul class="nav">
                 <li><a href="">Home</a></li>
-                <li><a href="">Band</a></li>
-                <li><a href="">Tour</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">More <i class="subnav-icon ti-angle-down"></i></a>
+                    <a href="#">More <i class="subnav-icon ti-angle-down"></i></a>
                     <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
@@ -38,7 +39,7 @@
         </div>
 
         <div class="content">
-            <div class="content__the-band content__wrapper">
+            <div id="band" class="content__the-band content__wrapper">
                 <div>
                     <h2 class="content__wrapper__header">the band</h2>
                     <p class="content__wrapper__slogan">We love music</p>
@@ -73,7 +74,7 @@
                 </div>
             </div>
 
-            <div class="content__tour-dates content__wrapper">
+            <div id="tour" class="content__tour-dates content__wrapper">
                 <div>
                     <h2 class="content__wrapper__header">tour dates</h2>
                     <p class="content__wrapper__slogan">Remember to book your tickets!</p>
@@ -137,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="contact content__the-band content__wrapper">
+            <div id="contact" class="contact content__the-band content__wrapper">
                 <div>
                     <h2 class="content__wrapper__header">contact</h2>
                     <p class="content__wrapper__slogan">Fan? Drop a note!</p>
@@ -159,12 +160,20 @@
                         </ul>
 
                         <form action="" class="col col-2 contact-form">
-                            <div class="contact-form__name-and-email__wrapper">
-                                <input placeholder="Name" type="text" class="contact-form__input-name">
-                                <input placeholder="Email" type="text" class="contact-form__input-email">
+                            <div class="row" style="margin-bottom: 8px;">
+                                <div class="col col-2">
+                                    <input required placeholder="Name" type="text" class="contact-form__input-name">
+                                </div>
+                                <div class="col col-2">
+                                    <input required placeholder="Email" type="text" class="contact-form__input-email">
+                                </div>
                             </div>
-                            <textarea name="" placeholder="Message" id="" cols="" rows="" class="contact-form__msg"></textarea>
-                            <button class="btn contact-form__btn">SEND</button>
+                            <div class="row">
+                                <div class="col col-1">
+                                    <input required type="text" placeholder="Message" class="contact-form__input-msg">
+                                </div>
+                            </div>
+                            <button class="btn contact-form__btn" type="submit">SEND</button>
                         </form>
                     </div>
                 </div>
