@@ -7,17 +7,18 @@
     <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/3159/3159075.svg" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="./assets/icon/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
     <div id="app">
         <div class="header">
             <ul class="nav">
-                <li><a href="">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#band">Band</a></li>
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="#">More <i class="subnav-icon ti-angle-down"></i></a>
+                    <a href="#" id="more">More <i class="subnav-icon ti-angle-down"></i></a>
                     <ul class="subnav">
                         <li><a href="#">Merchandise</a></li>
                         <li><a href="#">Extras</a></li>
@@ -27,7 +28,10 @@
             </ul>
 
             <div class="search">
-                <i class="search-icon ti-search"></i>
+                <i class="search__icon ti-search"></i>
+            </div>
+            <div class="mobile-menu">
+                <i class="mobile-menu__icon ti-menu"></i>
             </div>
         </div>
 
@@ -58,15 +62,15 @@
                     </p>
 
                     <ul class="row content__the-band__mem">
-                        <li class="col col-3 text-center">
+                        <li class="col col-3 text-center member-item">
                             <p class="content__the-band__mem__name">Name</p>
                             <img src="/assets/img/content/bandmember.jpg" alt="A singer" class="content__the-band__mem__img">
                         </li>
-                        <li class="col col-3 text-center">
+                        <li class="col col-3 text-center member-item ">
                             <p class="content__the-band__mem__name">Name</p>
                             <img src="/assets/img/content/bandmember.jpg" alt="A singer" class="content__the-band__mem__img">
                         </li>
-                        <li class="col col-3 text-center">
+                        <li class="col col-3 text-center member-item ">
                             <p class="content__the-band__mem__name">Name</p>
                             <img src="/assets/img/content/bandmember.jpg" alt="A singer" class="content__the-band__mem__img">
                         </li>
@@ -95,7 +99,7 @@
                     </ul>
 
                     <ul class="tour-place row">
-                        <li class="col col-3">
+                        <li class="col col-3 place-item">
                             <div>
                                 <div class="tour-place__image__wrapper">
                                     <img src="/assets/img/content/newyork.jpg" class="tour-place__image" alt="">
@@ -108,7 +112,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="col col-3">
+                        <li class="col col-3 place-item">
                             <div>
                                 <div class="tour-place__image__wrapper">
                                     <img src="/assets/img/content/paris.jpg" class="tour-place__image" alt="">
@@ -121,7 +125,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="col col-3">
+                        <li class="col col-3 place-item">
                             <div>
                                 <div class="tour-place__image__wrapper">
                                     <img src="/assets/img/content/sanfran.jpg" class="tour-place__image" alt="">
@@ -151,20 +155,20 @@
                             </li>
                             <li>
                                 <i class="ti-mobile"></i>
-                                <p class="contact-list__detail">Phone: +00 151515</p>
+                                <p class="contact-list__detail">Phone: <a href="tel:+00 151515">+00 151515</a></p>
                             </li>
                             <li>
                                 <i class="ti-email"></i>
-                                <p class="contact-list__detail">Email: mail@mail.com</p>
+                                <p class="contact-list__detail">Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
                             </li>
                         </ul>
 
                         <form action="" class="col col-2 contact-form">
                             <div class="row" style="margin-bottom: 8px;">
-                                <div class="col col-2">
+                                <div class="col col-2 form-control">
                                     <input required placeholder="Name" type="text" class="contact-form__input-name">
                                 </div>
-                                <div class="col col-2">
+                                <div class="col col-2 form-control">
                                     <input required placeholder="Email" type="text" class="contact-form__input-email">
                                 </div>
                             </div>
@@ -220,5 +224,29 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        const toggle = document.querySelector('.mobile-menu');
+        const header = document.querySelector('.header');
+        const subnav = document.querySelector('.subnav');
+        toggle.onclick = function(e) {
+            header.classList.toggle('on');
+        }
+        const anchorList = document.querySelectorAll('.nav li a[href*="#"]');
+        Array.from(anchorList).forEach( (item, idx) => {
+            item.onclick = function(e) {
+                if (item.id === 'more') {
+                    e.preventDefault();
+                    subnav.classList.toggle('on');
+                } else {
+                    if (header.classList.contains('on')) {
+                        header.classList.remove('on');
+                    } 
+                }
+            }
+        });
+        
+    </script>
 </body>
 </html>

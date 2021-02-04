@@ -21,6 +21,9 @@ ul {
     --white-color: #fff
 }
 /* Common */
+.header.on {
+    height: auto;
+}
 .spacer {
     visibility: hidden;
     height: 1px;
@@ -61,11 +64,15 @@ ul {
 }
 .nav {
     display: inline-flex;
+    position: relative;
 }
 .nav > li {
     list-style-type: none;
     position: relative;
 } 
+.nav > li:first-child {
+    display: inline-block;
+}
 .nav > li > a {
     color: var(--white-color);
     text-decoration: none;
@@ -87,6 +94,9 @@ ul {
     box-shadow: 0px 0px 6px #ccc;
     position: absolute;
 }
+ul.nav > li .subnav.on {
+    display: block;
+}
 .nav .subnav li {
     /* border-bottom: 1px solid; */
 }
@@ -96,16 +106,33 @@ ul {
 .nav .subnav li a {
     color: var(--black-color);
     text-decoration: none;
-    display: inline-block;
+    display: block;
     padding: 12px 24px;
 }
-.search {
+.search,
+.mobile-menu {
     display: inline-block;
     float: right;
     height: 46px;
     cursor: pointer;
 }
-.search-icon {
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+.mobile-menu__icon {
+    font-size: 1.2rem;
+}
+.mobile-menu:hover {
+    background-color: #CCC;
+}
+.mobile-menu:hover .mobile-menu__icon {
+    color: var(--black-color);
+}
+.search__icon,
+.mobile-menu__icon {
     color: var(--white-color);
     line-height: 46px;
     padding: 0 20px;
@@ -145,10 +172,15 @@ ul {
 /* Content includes 3 parts, we will do it sequencially */
 /* The band section */
 /* The below is the common between 3 parts*/
+.content__wrapper {
+    padding: 0 16px;
+}
 .content__wrapper > div {
     width: 800px;
+    max-width: 100%;
     margin: 0px auto;
     padding: 64px 0 110px;
+    
 }
 .content__wrapper__header {
     text-transform: uppercase;
@@ -291,6 +323,7 @@ ul {
     font: inherit;
 }
 .contact-form__btn {
+    margin-top: 6px;
     float: right;
 }
 /* Footer */
